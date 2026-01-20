@@ -28,9 +28,10 @@ export class WebTablesPage extends BasePage {
     this.table = page.locator('.rt-table');
   }
 
-  async openWebTables() {
-    await this.open('https://demoqa.com/webtables');
-  }
+ async openWebTables() {
+  await this.navigate('https://demoqa.com/webtables');
+}
+
 
   async addUser(
     first: string,

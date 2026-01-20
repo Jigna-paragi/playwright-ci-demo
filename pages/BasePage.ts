@@ -7,7 +7,10 @@ export class BasePage {
     this.page = page;
   }
 
-  async openUrl(url: string) {
-    await this.page.goto(url);
+  async navigate(url: string) {
+    await this.page.goto(url, {
+      waitUntil: 'domcontentloaded',
+      timeout: 60000,
+    });
   }
 }

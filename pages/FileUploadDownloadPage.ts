@@ -15,8 +15,8 @@ export class FileUploadDownloadPage extends BasePage {
   }
 
   async open() {
-    await this.openUrl('https://demoqa.com/upload-download');
-  }
+  await this.navigate('https://demoqa.com/upload-download');
+}
 
   async uploadFile(filePath: string) {
     await this.uploadInput.setInputFiles(filePath);

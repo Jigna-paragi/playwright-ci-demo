@@ -14,19 +14,22 @@ export class DynamicPropertiesPage extends BasePage {
     this.colorChangeBtn = page.locator('#colorChange');
   }
 
-  async openPage() {
-    await this.openUrl('https://demoqa.com/dynamic-properties');
-  }
+async openPage() {
+  await this.navigate('https://demoqa.com/dynamic-properties');
+}
+
+
 
   async waitForEnableButton() {
-    await expect(this.enableAfterBtn).toBeEnabled();
-  }
+  await expect(this.enableAfterBtn).toBeEnabled({ timeout: 10000 });
+}
 
-  async waitForVisibleButton() {
-    await expect(this.visibleAfterBtn).toBeVisible();
-  }
+ async waitForVisibleButton() {
+  await expect(this.visibleAfterBtn).toBeVisible({ timeout: 10000 });
+}
 
   async waitForColorChange() {
-    await expect(this.colorChangeBtn).toHaveClass(/text-danger/);
-  }
-}
+  await expect(this.colorChangeBtn).toHaveClass(/text-danger/, {
+    timeout: 10000,
+  });
+} }
