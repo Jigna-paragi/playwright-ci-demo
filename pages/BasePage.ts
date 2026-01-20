@@ -7,12 +7,7 @@ export class BasePage {
     this.page = page;
   }
 
-  async navigate(url: string) {
-    await this.page.goto(url);
-  }
-
-  async open(url:string)
-  {
+  async openUrl(url: string) {
     await this.page.goto(url);
   }
 }
